@@ -1,0 +1,1 @@
+const double kDesktopWidth = 600;
