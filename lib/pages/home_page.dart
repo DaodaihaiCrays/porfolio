@@ -110,21 +110,27 @@ class _HomePageState extends State<HomePage> {
                         ),
                       ),
                       SizedBox(height: 20),
-                      Text(
-                        "University of Science - Vietnam National University | Vietnam",
-                        style: TextStyle(
-                          fontSize: 30,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.white,
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Text(
+                          "University of Science - Vietnam National University | Vietnam",
+                          style: TextStyle(
+                            fontSize: 30,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.white,
+                          ),
                         ),
                       ),
                       SizedBox(height: 20),
-                      Text(
-                        "Bachelor of Science in Information Technology | 2020 - 2024",
-                        style: TextStyle(
-                          fontSize: 20,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.white,
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Text(
+                          "Bachelor of Science in Information Technology | 2020 - 2024",
+                          style: TextStyle(
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.white,
+                          ),
                         ),
                       ),
                     ],
