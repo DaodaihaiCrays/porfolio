@@ -30,7 +30,7 @@ List<ProjectUtils> mobileProject = [
 
   ProjectUtils(
     image: "assets/projects/happy_food.png",
-    name: "Happy Food",
+    name: "Food Shopping",
     description:
         "Built a Flutter-based food ordering app with user and admin roles; users can browse dishes, manage cart and wallet, while admins can add new dishes by category.",
     link: "https://github.com/DaodaihaiCrays/food_shopping.git",
