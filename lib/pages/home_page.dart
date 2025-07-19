@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:portfolio/constaints/colors.dart';
-import 'package:portfolio/constaints/nav_items.dart';
-import 'package:portfolio/constaints/size.dart';
-import 'package:portfolio/constaints/skill_items.dart';
+import 'package:portfolio/constants/colors.dart';
+import 'package:portfolio/constants/nav_items.dart';
+import 'package:portfolio/constants/size.dart';
+import 'package:portfolio/constants/skill_items.dart';
 import 'package:portfolio/utils/project_utils.dart';
 import 'package:portfolio/widgets/button_connect.dart';
 import 'package:portfolio/widgets/drawer_mobile.dart';
@@ -16,6 +16,8 @@ import 'package:portfolio/widgets/project_card.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 
+import '../widgets/company.dart';
+
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
 
@@ -26,7 +28,7 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
   final ScrollController crollController = ScrollController();
-  final List<GlobalKey> navbarKey = List.generate(4, (index) => GlobalKey());
+  final List<GlobalKey> navbarKey = List.generate(5, (index) => GlobalKey());
 
   void scrollToSection(int navIndex) {
     // Lấy GlobalKey tương ứng từ danh sách navbarKeys
@@ -261,13 +263,60 @@ class _HomePageState extends State<HomePage> {
                     ],
                   ),
                 ),
-            
                 SizedBox(height: 20),
+
+                // Experience
+                Container(
+                  key: navbarKey[3],
+                  width: double.infinity,
+                  color: CustomColor.bgLight1,
+                  padding: EdgeInsets.only(top: 20),
+                  child: Column(
+                    children: [
+                      Text(
+                        "Experience",
+                        style: TextStyle(
+                          fontSize: 24,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white,
+                        ),
+                      ),
+                      SizedBox(height: 20),
+
+                      for (int i = 0; i < companies.length; i++)
+                        Column(
+                          children: [
+                            Padding(
+                              padding: const EdgeInsets.symmetric(
+                                horizontal: 30,
+                                vertical: 10,
+                              ),
+                              child: Align(
+                                alignment: Alignment.topLeft,
+                                child: Company(companies: companies[i]),
+                              ),
+                            ),
+                            // if (i != beProjects.length - 1)
+                            //   Center(
+                            //     child: SizedBox(
+                            //       width: 200,
+                            //       child: Divider(
+                            //         color: CustomColor.textFieldBg,
+                            //         thickness: 0.5,
+                            //       ),
+                            //     ),
+                            //   ),
+                          ],
+                        )
+                    ],
+                  ),
+                ),
+                SizedBox(height: 20),
+
                 // Contact
                 Container(
                   key: navbarKey.last,
                   width: double.infinity,
-                  color: CustomColor.bgLight1,
                   child: Column(
                     children: [
                       SizedBox(height: 10),
@@ -279,9 +328,9 @@ class _HomePageState extends State<HomePage> {
                           color: Colors.white,
                         ),
                       ),
-            
+
                       SizedBox(height: 20),
-            
+
                       Wrap(
                         children: [
                           Container(
@@ -380,7 +429,7 @@ class _HomePageState extends State<HomePage> {
                       ElevatedButton(
                         onPressed: () async {
                           // Handle tap
-            
+
                           String? encodeQueryParameters(
                             Map<String, String> params,
                           ) {
@@ -391,7 +440,7 @@ class _HomePageState extends State<HomePage> {
                                 )
                                 .join('&');
                           }
-            
+
                           final Uri emailUri = Uri(
                             scheme: 'mailto',
                             path: "daodaihai.work@gmail.com",

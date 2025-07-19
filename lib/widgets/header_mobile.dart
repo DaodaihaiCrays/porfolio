@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio/constaints/colors.dart';
+import 'package:portfolio/constants/colors.dart';
 
 class HeaderMobile extends StatelessWidget {
 

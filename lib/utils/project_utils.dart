@@ -110,3 +110,28 @@ List<ProjectBEItem> beProjects = [
     ]
   ), 
 ];
+
+class CompanyItem {
+  String name;
+  List<String> description;
+  String time;
+
+  CompanyItem({
+    required this.name,
+    required this.description,
+    required this.time,
+  });
+}
+
+List<CompanyItem> companies = [
+  CompanyItem(
+    name: "Viettel Solution",
+    description: [
+      "Developed and maintained mobile applications, focusing on stability and performance.",
+      "Set up Firebase to monitor app crashes and evaluate performance, helping maintain a smooth user experience.",
+      "Adjusted project codebases to shift from a three-level to a two-level local administrative model."
+      "Contributed to the development of an AI-powered integration that allows external conversational agents to securely execute in-app operations like user creation or order management."
+    ],
+    time: "May 2025 - Present",
+  ),
+];

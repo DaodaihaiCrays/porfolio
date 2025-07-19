@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio/constaints/colors.dart';
-import 'package:portfolio/constaints/nav_items.dart';
+import 'package:portfolio/constants/colors.dart';
+import 'package:portfolio/constants/nav_items.dart';
 
 class HeaderDesktop extends StatelessWidget {
   const HeaderDesktop({super.key, required this.onNavItemTap});
